@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+CPIT-405
+    </title>
+<link rel="stylesheet" href="/style.css">
+    <script>
+        function sort() {
+
+            
+            var geek_list, i, run, li, stop;
+
+            
+            geek_list = document.getElementById("GeekList");
+
+            run = true;
+
+            while (run) {
+                run = false;
+                li = geek_list.getElementsByTagName("LI");
+
+                
+                for (i = 0; i < (li.length - 1); i++) {
+                    stop = false;
+                    if (li[i].innerHTML.toLowerCase() <
+                        li[i + 1].innerHTML.toLowerCase()) {
+                        stop = true;
+                        break;
+                    }
+                }
+
+                if (stop) {
+                    li[i].parentNode.insertBefore(
+                        li[i + 1], li[i]);
+
+                    run = true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align:center;
+		color: forestgreen;">
+        ===============
+    </h1>
+    <p style="text-align:center; font-size: 15px;
+		font-weight: bold;">
+        Click on the button to sort the list
+    </p>
+
+    <ul style="color: crimson;" id="GeekList">
+        <li><h1 class="li">60 likes</h1> <br> <img src="https://cdn.pixabay.com/photo/2022/01/16/15/03/finch-6942278_960_720.jpg"> </li>
+        <li><h1 class="li">75 likes</h1> <br> <img src="https://cdn.pixabay.com/photo/2022/01/05/22/40/rainbow-6918224_960_720.png"> </li>
+        <li><h1 class="li">63 likes </h1><br> <img src="https://cdn.pixabay.com/photo/2022/02/07/10/25/bird-6999073_960_720.jpg"></li>
+        <li><h1 class="li">61 likes </h1><br> <img src="https://cdn.pixabay.com/photo/2021/11/04/16/19/travel-6768660_960_720.png"></li>
+    <li>
+        <h1 class="li">59 likes </h1><br><img src="https://cdn.pixabay.com/photo/2022/01/08/19/13/animal-6924664_960_720.jpg">
+    </li>
+    <li>
+        <h1 class="li">32 likes </h1><br> <img src="https://cdn.pixabay.com/photo/2022/01/25/11/30/takeaway-6965921_960_720.jpg">
+    </li>
+    </ul>
+    <br>
+
+    <center>
+        <button style="color: crimson;" onclick="sort()">
+            Click Here To Sort
+        </button>
+    </center>
+</body>
+
+</html>
